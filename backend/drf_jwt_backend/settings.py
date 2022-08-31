@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     "rest_framework",
     "authentication.apps.AuthenticationConfig",
     "corsheaders",
-    "cars.app.CarsConfig", # This app is for example use only
-    "comments",
+    # "cars.app.CarsConfig", # This app is for example use only
+    # "comments",
+    "cars",
 ]
 
 MIDDLEWARE = [
@@ -116,6 +117,6 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 try:
-    from drf_jwt_backend.local_setting import *
+    from drf_jwt_backend.local_settings import *
 except ImportError:
     pass   
