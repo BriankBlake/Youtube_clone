@@ -24,6 +24,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'authentication.User'
 
 # Application definition
 
@@ -39,7 +40,7 @@ INSTALLED_APPS = [
     "corsheaders",
     # "cars.app.CarsConfig", # This app is for example use only
     # "comments",
-    "cars",
+    "cars"
 ]
 
 MIDDLEWARE = [
