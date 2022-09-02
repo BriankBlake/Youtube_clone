@@ -17,7 +17,7 @@ def get_all_comment(request, id):
     return Response(serializer.data, status=status.HTTP_200_OK)
 
 @api_view(['POST'])
-@permission_classes ([IsAuthenticated])
+@permission_classes([IsAuthenticated])
 def new_comment (request):
     serializer = CommentSerializer (data=request.data)
     if serializer.is_valid():
