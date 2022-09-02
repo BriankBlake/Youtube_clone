@@ -1,7 +1,6 @@
 from django.db import models
 from authentication.models import User
 
-from backend.authentication.models import User
 
 # Create your models here.
 class Comment (models.Model):

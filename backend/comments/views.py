@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import Comment
 from .serializer import CommentSerializer
+from rest_framework.permissions import IsAuthenticated, AllowAny
 
 # Create your views here.
 

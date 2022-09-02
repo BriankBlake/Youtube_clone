@@ -1,5 +1,5 @@
 from django.urls import path
-from comment import views
+from comments import views
 
 urlpatterns = [
     path('<str:id>/', views.get_all_comment),
