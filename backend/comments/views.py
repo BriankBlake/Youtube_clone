@@ -24,7 +24,7 @@ def new_comment (request):
     if serializer.is_valid():
         serializer.save (user=request.user)
         return Response (serializer.data, status=status.HTTP_201_CREATED)
-    return Response (serializer.errors, status=status.HTTP_402_PAYMENT_REQUIRED)
+    return Response (serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 #Getting "get () return more than one Comment -- it returned 3 intermediate django 20:30!"
 @api_view(['PATCH'])
