@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { DATA } from '../../localData';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import {KEY} from '../../localKey';
