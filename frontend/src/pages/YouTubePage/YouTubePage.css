@@ -1,0 +1,13 @@
+.videoContainer {
+    display: flex;
+    padding-top: 50px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+
+.video {
+    align-items: center;
+    width: 350px;
+}
