@@ -1,24 +1,28 @@
 import React, { useState } from 'react';
-import {useNavigate} from 'react-router-dom';
-import SearchPage from '../../pages/SearchPage/SearchPage';
+import "./SearchBar.css";
 
 const SearchBar = (props) => {
-    const [search, updateSearch] = useState();
 
-    const navigate = useNavigate();
+const [searchRequest, setSearchRequest] = useState('');
 
-    function handleSubmit(event) {
-        event.preventDefault();
-        const encoded = encodeURIComponent(search);
-        navigate(`/search/${search}`);
-    }
+const handleSubmit = (event) => {
+    event.preventDefault(); 
+    console.log(searchRequest) //will delete later
+    props.getSearchResults(searchRequest);
+    setSearchRequest('');
+}
 
-    return (
-        <form onSubmit={handleSubmit}>
-            <input type="search" value={search} onChange={(event) => updateSearch(event.target.value)} />
-            <button>Search</button>
+
+
+    return (  
+    <div className='search-contain'>
+        <form className='search-form-contain' onSubmit={handleSubmit}>
+            <label className='search-label'>Search:</label>
+            <input type='text' placeholder="Search for a video..." className='search-input' value={searchRequest} onChange ={(event) => setSearchRequest(event.target.value)} />
+            <button className='search-button'>Search</button>
         </form>
+    </div>
     );
-};
-
+}
+ 
 export default SearchBar;
