@@ -13,7 +13,7 @@ import "./YouTubePage.css";
 
     const fetchVideos = async () => {
         try {
-            let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=stranger%20things&key=${KEY}&part=snippet&maxResults=10`);
+            let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=stranger%20things&key=${KEY}&part=snippet&maxResults=5`);
             console.log(response.data.items)
             setVideos(response.data.items)
         } catch (error) {

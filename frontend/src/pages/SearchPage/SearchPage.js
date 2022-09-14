@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {KEY} from "../../localKey";
+import { KEY } from "../../localKey"
 import axios from "axios";
 import {Link, useParams} from "react-router-dom";
 

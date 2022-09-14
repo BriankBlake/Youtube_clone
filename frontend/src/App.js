@@ -1,7 +1,7 @@
 // General Imports
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import { KEY } from "./localKey";
+
 
 // Pages Imports
 import HomePage from "./pages/HomePage/HomePage";
@@ -10,6 +10,10 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import VideoPage from "./pages/VideoPage/VideoPage";
 import YouTubePage from "./pages/YouTubePage/YouTubePage";
 import SearchPage from "./pages/SearchPage/SearchPage";
+
+
+
+
 
 
 // Component Imports
@@ -22,9 +26,12 @@ import SearchBar from "./components/SearchBar/SearchBar";
 import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
+
+
   return (
     <div>
       <Navbar />
+      <SearchBar />
       <Routes>
         <Route
           path="/"
