@@ -8,7 +8,7 @@ const [searchRequest, setSearchRequest] = useState('');
 const handleSubmit = (event) => {
     event.preventDefault(); 
     console.log(searchRequest) //will delete later
-    props.getSearchResults(searchRequest);
+    props.fetchVideos(searchRequest);
     setSearchRequest('');
 }
 

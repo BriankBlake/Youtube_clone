@@ -31,7 +31,6 @@ function App() {
   return (
     <div>
       <Navbar />
-      <SearchBar />
       <Routes>
         <Route
           path="/"
