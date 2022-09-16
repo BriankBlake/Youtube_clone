@@ -1,42 +1,59 @@
 import React, { useState, useEffect } from 'react';
-import {KEY} from "../../localKey";
-import axios from "axios";
-import {Link, useParams} from "react-router-dom";
+import  {useParams} from "react-router-dom";
+import { KEY } from "../../localKey";
+import axios from 'axios';
+import './VideoPage.css';
+//import { Link } from 'react-router-dom';
 
-const SearchPage = () => {
-    const [videos, setVideos] = useState([]);
-    const {search} = useParams();
-
+const VideoPage = (props) => {
+    const {videoid} = useParams();
+    console.log(videoid)
+    const [relatedVideos, setRelatedVideos] = useState([]);
    
-    const fetchVideos = async (search) => {
+
+    async function getRelatedVideos(id) {
         try {
-            let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=${search}&key=${KEY}`);
-            console.log(response.data.items)
-            setVideos(response.data.items)
+            let response = await axios.get(
+                `https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${id}&type=video&key=${KEY}&part=snippet&maxResults=8`);
+                setRelatedVideos(response.data.items);
         } catch (error) {
+            console.log(error.message);
             
         }
-    };
+    }
+
     useEffect(() => {
-        fetchVideos();
-    }, []);
+        getRelatedVideos(videoid);
+     },[]);
 
-    return (
-        <div className='videoscontainer'>
-            {videos &&
-            videos.map((video) => {
+return (
+    <div className='video-page'>
+        <div>
+        <iframe
+            id="ytplayer"
+            type="text/html"
+            title="myVideo"
+            width="640"
+            height="360"
+            src={`https://www.youtube.com/embed/${videoid}?autoplay=1`}
+          ></iframe>
+        </div>
+        <div className='relatedvideos'>
+            {relatedVideos &&
+            relatedVideos.map((video) => {
                 return (
-                    <div className='vid' key={video.snippet.title}>
+                    <div>
                         <p>{video.snippet.title}</p>
-                        <Link to={`/video/${video.id.videoId}`}>
-                            <img src={video.snippet.thumbnails.medium.url} />
-                        </Link>
-
+                        <img src={video.snippet.thumbnails.medium.url} />
                     </div>
-                );
+                )
             })}
         </div>
-    );
+    </div>
+
+)
+
+   
 }
-;
-export default SearchPage;
+
+export default VideoPage;

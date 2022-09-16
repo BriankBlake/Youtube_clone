@@ -13,7 +13,7 @@ const HomePage = () => {
     const {search} = useParams();
 
    
-    const fetchVideos = async (search="fbg duck") => {
+    const fetchVideos = async (search="jackson 5") => {
         try {
             let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${search}&type=video&maxResults=5&key=${KEY}`);
             console.log(response.data.items)
