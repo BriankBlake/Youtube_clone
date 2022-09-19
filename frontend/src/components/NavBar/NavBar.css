@@ -5,27 +5,27 @@ ul {
 }
 
 li {
-  font-size: 1.25rem;
+  font-size: 2.25rem;
 }
 
 .navBar {
-  background: steelblue;
-  box-shadow: 4px 2px 5px gray;
-  color: white;
+  background: black;
+  box-shadow: 4px 2px 5px light pink;
+  color: purple;
   margin-bottom: 2rem;
   padding: 1.5rem 2rem;
 }
 
 .navBar button {
-  background: transparent;
-  border: 2px solid white;
-  color: white;
+  background: clear;
+  border: 2px  black;
+  color: light purple;
   padding: 0.4rem 0.5rem;
 }
 
 .navBar button:hover {
-  background: white;
-  color: steelblue;
+  background: light pink;
+  color: purple;
   cursor: pointer;
 }
 
@@ -33,3 +33,4 @@ li {
   cursor: pointer;
   font-size: 2rem;
 }
+

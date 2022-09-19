@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { KEY } from "../../localKey";
 import SearchBar from '../../components/SearchBar/SearchBar';
 import axios from "axios";
-import {Link, useParams} from "react-router-dom";
-import HomePage from '../HomePage/HomePage';
+import {Link, } from "react-router-dom";
+
 
 const SearchPage = () => {
     const [videos, setVideos] = useState([]);
-    const {search} = useParams();
+    // const {search} = useParams();
 
    
     const fetchVideos = async (search) => {
@@ -33,7 +33,7 @@ const SearchPage = () => {
                     <div className='vid' key={video.snippet.title}>
                         <p>{video.snippet.title}</p>
                         <Link to={`/video/${video.id.videoId}`}>
-                            <img src={video.snippet.thumbnails.medium.url} />
+                            <img src={video.snippet.thumbnails.medium.url} alt='' />
                         </Link>
 
                     </div>

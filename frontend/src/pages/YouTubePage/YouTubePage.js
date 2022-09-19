@@ -29,7 +29,7 @@ import "./YouTubePage.css";
                     <div className='video' key={video.snippet.title}>
                         <p>{video.snippet.title}</p>
                         <Link to={`/video/${video.id.videoId}`}>
-                            <img src={video.snippet.thumbnails.medium.url} />
+                            <img src={video.snippet.thumbnails.medium.url} alt='' />
                         </Link>
                     </div>
                 );

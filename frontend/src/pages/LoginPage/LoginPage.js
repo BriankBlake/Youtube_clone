@@ -16,7 +16,7 @@ const LoginPage = () => {
     if (isServerError) {
       reset();
     }
-  }, [isServerError]);
+  }, );
 
   return (
     <div className="container">

@@ -24,7 +24,7 @@ const VideoPage = (props) => {
 
     useEffect(() => {
         getRelatedVideos(videoid);
-     },[]);
+     },);
 
 return (
     <div className='video-page'>
@@ -44,7 +44,7 @@ return (
                 return (
                     <div>
                         <p>{video.snippet.title}</p>
-                        <img src={video.snippet.thumbnails.medium.url} />
+                        <img src={video.snippet.thumbnails.medium.url} alt='thumbnail' />
                     </div>
                 )
             })}

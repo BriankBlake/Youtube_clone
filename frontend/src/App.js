@@ -1,7 +1,7 @@
 // General Imports
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import { DATA } from "./localData";
+// import { DATA } from "./localData";
 
 // Pages Imports
 import HomePage from "./pages/HomePage/HomePage";
@@ -19,7 +19,7 @@ import SearchPage from "./pages/SearchPage/SearchPage";
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-import SearchBar from "./components/SearchBar/SearchBar";
+
 
 
 // Util Imports
