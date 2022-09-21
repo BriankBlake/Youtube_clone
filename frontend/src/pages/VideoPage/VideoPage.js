@@ -21,6 +21,20 @@ const VideoPage = (props) => {
             
         }
     }
+    async function getAllComments(videoid) {
+        try {
+            let response = await axios.get(
+                `http://127.0.0.1:8000/api/comments/${videoid}`);
+                setAllComments(response.data.items);
+        } catch (error) {
+            console.log(error.message);
+            
+        }
+    }
+
+    useEffect(() => {
+        getAllComments(videoid);
+     },);
 
     useEffect(() => {
         getRelatedVideos(videoid);
