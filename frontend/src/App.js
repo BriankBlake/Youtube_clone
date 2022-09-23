@@ -1,5 +1,9 @@
 // General Imports
 import { Routes, Route } from "react-router-dom";
+import DisplayComment from "./components/DisplayComment/DisplayComment";
+import SearchBar from "./components/SearchBar/SearchBar";
+import React, { useState } from 'react';
+
 import "./App.css";
 // import { DATA } from "./localData";
 
@@ -26,9 +30,12 @@ import Footer from "./components/Footer/Footer";
 import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
+  const [commentId, setCommentId] = useState(['Id']);
+
 
 
   return (
+    
     <div>
       <Navbar />
       <Routes>

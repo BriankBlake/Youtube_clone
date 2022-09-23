@@ -1,30 +1,26 @@
-import React, { useState } from "react";
-import './CommentForm.css';
+import React from "react";
+import { Avatar } from "@material-ui/core";
+import ThumbUpOutlinedIcon from "@material-ui/icons/ThumbUpOutlined";
 
+import "../VideoPlayer/VideoPlayer.css";
 
-const CommentForm = (props) => {
-
-  const [comment, setComment] = useState('');
-
-  const handleSubmit = (event) => {
-    event.preventDefault(); 
-    props.postComment(comment);
-    setComment('');
-}
-
+export const Comments = ({ userImage, user, comment, timestamp }) => {
   return (
-    <div>
-      <form className="comm-form" onSubmit={handleSubmit}>
-        <div>
-            <label className = 'comment-label' htmlFor="Comment">Comment:{" "}</label>
-            <input type= "text" id = 'Comment' className="comm-input" value = {comment} onChange ={(event) => setComment(event.target.value)} />
+    <div className="videoPlayer">
+      <div className="videoPlayer__info">
+        <div className="videoPlayer__comment">
+          <Avatar
+            // style={{display: "inline-flex"}}
+            className="videoPlayer__avatar"
+            alt={user}
+            src={userImage}
+          />
+          <p>
+            {user} {timestamp}
+          </p>
+          <p>{comment}</p>
         </div>
-        <div className="comm-but-contain">
-            <button type = 'submit' className="comm-button">Post</button>
-        </div>
-      </form>
+      </div>
     </div>
   );
 };
-
-export default CommentForm;

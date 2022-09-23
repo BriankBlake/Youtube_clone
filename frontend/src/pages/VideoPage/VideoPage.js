@@ -2,13 +2,16 @@ import React, { useState, useEffect } from 'react';
 import  {useParams} from "react-router-dom";
 import { KEY } from "../../localKey";
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './VideoPage.css';
-//import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const VideoPage = (props) => {
     const {videoid} = useParams();
     console.log(videoid)
     const [relatedVideos, setRelatedVideos] = useState([]);
+    const [comment, setComment] = useState([]);
+
    
 
     async function getRelatedVideos(id) {
@@ -21,19 +24,14 @@ const VideoPage = (props) => {
             
         }
     }
-    async function getAllComments(videoid) {
-        try {
-            let response = await axios.get(
-                `http://127.0.0.1:8000/api/comments/${videoid}`);
-                setAllComments(response.data.items);
-        } catch (error) {
-            console.log(error.message);
-            
-        }
-    }
+    async function getAllComment() {
+        const response = await axios.get("http://127.0.0.1:8000/api/comments/6zr73ZeLK4I/");
+        console.log(response.data);
+        setComment(response.data);
+      }
 
     useEffect(() => {
-        getAllComments(videoid);
+        getAllComment(videoid);
      },);
 
     useEffect(() => {
